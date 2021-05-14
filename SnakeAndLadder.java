@@ -23,6 +23,7 @@ import java.util.*;
 	    		if(dice !=0) break;
 			}
 			System.out.println("NUmber of dice: "+dice);
+
 			//options
 			while(position < Win_position){
 
@@ -35,7 +36,7 @@ import java.util.*;
 			}
 			System.out.println("*****OPTIONS*****\nOption 1 : No Play\nOption 2 : Ladder \nOption 3 : Snake \n");
 			System.out.println("Options : "+option);
-			System.out.println("NUmber of dice: "+dice);
+		
 
 			switch (option) {
 				case No_Play:
@@ -44,6 +45,12 @@ import java.util.*;
 
 				case Ladder:
 					position += dice;
+					if((position + dice) > Win_position)
+						position=Win_position;
+					 
+					else
+						position+=dice;
+					
 					System.out.println("Player moves ahead by : "+position);
 					break;
 
