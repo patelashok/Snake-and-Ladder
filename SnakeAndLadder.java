@@ -6,6 +6,8 @@ import java.util.*;
 		public static final int No_Play=1;
 		public static final int Ladder=2;
 		public static final int Snake=3;
+		public static final int Win_position=100;
+		public static final int Position_check = 0;
 		public static void main(String[] args) 
 		{
 			System.out.println("Welcome to SnakeAndLadder Game");
@@ -22,6 +24,7 @@ import java.util.*;
 			}
 			System.out.println("NUmber of dice: "+dice);
 			//options
+			while(position < Win_position){
 
 			Random op = new Random();
 		        int option = 0;
@@ -32,6 +35,7 @@ import java.util.*;
 			}
 			System.out.println("*****OPTIONS*****\nOption 1 : No Play\nOption 2 : Ladder \nOption 3 : Snake \n");
 			System.out.println("Options : "+option);
+			System.out.println("NUmber of dice: "+dice);
 
 			switch (option) {
 				case No_Play:
@@ -45,15 +49,16 @@ import java.util.*;
 
 				case Snake:
 					position -= dice;
+					if ((position - dice) < Position_check){
+	                		position = Position_check;
+			}
 					System.out.println("Player moves behind by : "+position);
-					break;				
+					break;
 
-				default: 
+				default:
 					System.out.println("Enter correct value");
-
+		   break;
 			}
 		}
-	} 
-
-		
-	
+	}
+	}
