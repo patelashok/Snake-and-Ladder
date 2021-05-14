@@ -12,11 +12,16 @@ import java.util.*;
 		{
 			System.out.println("Welcome to SnakeAndLadder Game");
 
+			int Numdiceroll=0;
 			int position=0;
 			System.out.println("Player start position : "+position);
-                        Random random = new Random();
+                        Random newrandom = new Random();
 
+			while(position < Win_position){
+			Random random = new Random();
+			
 			int dice = 0;
+			
 			while (true)
 			{
 	    		dice = random.nextInt(7);
@@ -26,9 +31,10 @@ import java.util.*;
 
 			//options
 			while(position < Win_position){
-
+			
 			Random op = new Random();
-		        int option = 0;
+		        Numdiceroll++;
+			int option = 0;
 			while (true)
 			{
 	    		option = op.nextInt(4);
@@ -67,5 +73,7 @@ import java.util.*;
 		   break;
 			}
 		}
+			System.out.println("Number of times dice was rolled to win game: "+Numdiceroll);
+			}
 	}
 	}
